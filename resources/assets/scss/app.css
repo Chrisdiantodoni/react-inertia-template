@@ -5,10 +5,12 @@
   body {
     @apply h-full overflow-x-hidden dark:text-slate-300 text-slate-600 font-normal;
   }
-  body.light, body.skin--default {
+  body.light,
+  body.skin--default {
     @apply bg-slate-100;
   }
-  body.lght, body.skin--bordered {
+  body.lght,
+  body.skin--bordered {
     @apply bg-transparent;
   }
   body.dark {
@@ -38,10 +40,10 @@
   .space-xy-6 > * {
     @apply mr-4 mb-2;
   }
-  html[dir=rtl] .recharts-wrapper {
+  html[dir="rtl"] .recharts-wrapper {
     direction: rtl;
   }
-  html[dir=rtl] .recharts-yAxis .recharts-text {
+  html[dir="rtl"] .recharts-yAxis .recharts-text {
     text-anchor: start;
   }
   .dashcode-app .leaflet-control {
@@ -80,14 +82,23 @@
   .dash-codevmap path {
     @apply fill-[#6794DC];
   }
-  .dash-codevmap .svg-map__location[aria-checked=true] {
+  .dash-codevmap .svg-map__location[aria-checked="true"] {
     @apply fill-primary-500;
   }
   .progress {
     @apply bg-slate-900 dark:bg-slate-700 h-2;
   }
   .progress .progress-bar.stripes {
-    background-image: linear-gradient(45deg, hsla(0, 0%, 100%, 0.15) 25%, transparent 0, transparent 50%, hsla(0, 0%, 100%, 0.15) 0, hsla(0, 0%, 100%, 0.15) 75%, transparent 0, transparent);
+    background-image: linear-gradient(
+      45deg,
+      hsla(0, 0%, 100%, 0.15) 25%,
+      transparent 0,
+      transparent 50%,
+      hsla(0, 0%, 100%, 0.15) 0,
+      hsla(0, 0%, 100%, 0.15) 75%,
+      transparent 0,
+      transparent
+    );
     background-size: 0.857rem 0.857rem;
   }
   @keyframes progress-bar-stripes {
@@ -107,130 +118,194 @@
   .custom-tippy .tippy-arrow {
     @apply text-slate-900;
   }
-  .custom-tippy .tippy-box[data-theme~=primary] {
+  .custom-tippy .tippy-box[data-theme~="primary"] {
     @apply bg-primary-500 text-white;
   }
-  .custom-tippy .tippy-box[data-theme~=secondary] {
+  .custom-tippy .tippy-box[data-theme~="secondary"] {
     @apply bg-secondary-500 text-white;
   }
-  .custom-tippy .tippy-box[data-theme~=success] {
+  .custom-tippy .tippy-box[data-theme~="success"] {
     @apply bg-success-500 text-white;
   }
-  .custom-tippy .tippy-box[data-theme~=info] {
+  .custom-tippy .tippy-box[data-theme~="info"] {
     @apply bg-info-500 text-white;
   }
-  .custom-tippy .tippy-box[data-theme~=warning] {
+  .custom-tippy .tippy-box[data-theme~="warning"] {
     @apply bg-warning-500 text-white;
   }
-  .custom-tippy .tippy-box[data-theme~=danger] {
+  .custom-tippy .tippy-box[data-theme~="danger"] {
     @apply bg-danger-500 text-white;
   }
-  .custom-tippy .tippy-box[data-theme~=dark] {
+  .custom-tippy .tippy-box[data-theme~="dark"] {
     @apply bg-slate-900 text-white dark:bg-slate-900;
   }
-  .custom-tippy .tippy-box[data-theme~=custom-light] {
+  .custom-tippy .tippy-box[data-theme~="custom-light"] {
     @apply bg-white text-slate-900 dark:bg-slate-700 shadow-dropdown dark:border-slate-700 dark:border;
   }
-  .custom-tippy .tippy-box[data-theme~=custom-light2] {
+  .custom-tippy .tippy-box[data-theme~="custom-light2"] {
     @apply bg-white text-slate-900 dark:bg-slate-700 shadow-dropdown dark:border-slate-700 dark:border rounded;
   }
-  .custom-tippy .tippy-box[data-theme~=custom-light2] .tippy-content {
+  .custom-tippy .tippy-box[data-theme~="custom-light2"] .tippy-content {
     @apply p-0;
   }
-  .custom-tippy .tippy-box[data-theme~=custom-light][data-placement^=top] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="custom-light"][data-placement^="top"]
+    > .tippy-arrow::before {
     @apply border-t-white dark:border-t-slate-700;
   }
-  .custom-tippy .tippy-box[data-theme~=custom-light][data-placement^=bottom] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="custom-light"][data-placement^="bottom"]
+    > .tippy-arrow::before {
     @apply border-b-white dark:border-b-slate-700;
   }
-  .custom-tippy .tippy-box[data-theme~=custom-light][data-placement^=left] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="custom-light"][data-placement^="left"]
+    > .tippy-arrow::before {
     @apply border-l-white dark:border-l-slate-700;
   }
-  .custom-tippy .tippy-box[data-theme~=custom-light][data-placement^=right] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="custom-light"][data-placement^="right"]
+    > .tippy-arrow::before {
     @apply border-r-white dark:border-r-slate-700;
   }
-  .custom-tippy .tippy-box[data-theme~=primary][data-placement^=top] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="primary"][data-placement^="top"]
+    > .tippy-arrow::before {
     @apply border-t-primary-500;
   }
-  .custom-tippy .tippy-box[data-theme~=primary][data-placement^=bottom] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="primary"][data-placement^="bottom"]
+    > .tippy-arrow::before {
     @apply border-b-primary-500;
   }
-  .custom-tippy .tippy-box[data-theme~=primary][data-placement^=left] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="primary"][data-placement^="left"]
+    > .tippy-arrow::before {
     @apply border-l-primary-500;
   }
-  .custom-tippy .tippy-box[data-theme~=primary][data-placement^=right] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="primary"][data-placement^="right"]
+    > .tippy-arrow::before {
     @apply border-r-primary-500;
   }
-  .custom-tippy .tippy-box[data-theme~=secondary][data-placement^=top] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="secondary"][data-placement^="top"]
+    > .tippy-arrow::before {
     @apply border-t-secondary-500;
   }
-  .custom-tippy .tippy-box[data-theme~=secondary][data-placement^=bottom] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="secondary"][data-placement^="bottom"]
+    > .tippy-arrow::before {
     @apply border-b-secondary-500;
   }
-  .custom-tippy .tippy-box[data-theme~=secondary][data-placement^=left] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="secondary"][data-placement^="left"]
+    > .tippy-arrow::before {
     @apply border-l-secondary-500;
   }
-  .custom-tippy .tippy-box[data-theme~=secondary][data-placement^=right] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="secondary"][data-placement^="right"]
+    > .tippy-arrow::before {
     @apply border-r-secondary-500;
   }
-  .custom-tippy .tippy-box[data-theme~=success][data-placement^=top] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="success"][data-placement^="top"]
+    > .tippy-arrow::before {
     @apply border-t-success-500;
   }
-  .custom-tippy .tippy-box[data-theme~=success][data-placement^=bottom] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="success"][data-placement^="bottom"]
+    > .tippy-arrow::before {
     @apply border-b-success-500;
   }
-  .custom-tippy .tippy-box[data-theme~=success][data-placement^=left] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="success"][data-placement^="left"]
+    > .tippy-arrow::before {
     @apply border-l-success-500;
   }
-  .custom-tippy .tippy-box[data-theme~=success][data-placement^=right] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="success"][data-placement^="right"]
+    > .tippy-arrow::before {
     @apply border-r-success-500;
   }
-  .custom-tippy .tippy-box[data-theme~=info][data-placement^=top] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="info"][data-placement^="top"]
+    > .tippy-arrow::before {
     @apply border-t-info-500;
   }
-  .custom-tippy .tippy-box[data-theme~=info][data-placement^=bottom] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="info"][data-placement^="bottom"]
+    > .tippy-arrow::before {
     @apply border-b-info-500;
   }
-  .custom-tippy .tippy-box[data-theme~=info][data-placement^=left] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="info"][data-placement^="left"]
+    > .tippy-arrow::before {
     @apply border-l-info-500;
   }
-  .custom-tippy .tippy-box[data-theme~=info][data-placement^=right] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="info"][data-placement^="right"]
+    > .tippy-arrow::before {
     @apply border-r-info-500;
   }
-  .custom-tippy .tippy-box[data-theme~=warning][data-placement^=top] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="warning"][data-placement^="top"]
+    > .tippy-arrow::before {
     @apply border-t-warning-500;
   }
-  .custom-tippy .tippy-box[data-theme~=warning][data-placement^=bottom] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="warning"][data-placement^="bottom"]
+    > .tippy-arrow::before {
     @apply border-b-warning-500;
   }
-  .custom-tippy .tippy-box[data-theme~=warning][data-placement^=left] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="warning"][data-placement^="left"]
+    > .tippy-arrow::before {
     @apply border-l-warning-500;
   }
-  .custom-tippy .tippy-box[data-theme~=warning][data-placement^=right] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="warning"][data-placement^="right"]
+    > .tippy-arrow::before {
     @apply border-r-warning-500;
   }
-  .custom-tippy .tippy-box[data-theme~=danger][data-placement^=top] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="danger"][data-placement^="top"]
+    > .tippy-arrow::before {
     @apply border-t-danger-500;
   }
-  .custom-tippy .tippy-box[data-theme~=danger][data-placement^=bottom] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="danger"][data-placement^="bottom"]
+    > .tippy-arrow::before {
     @apply border-b-danger-500;
   }
-  .custom-tippy .tippy-box[data-theme~=danger][data-placement^=left] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="danger"][data-placement^="left"]
+    > .tippy-arrow::before {
     @apply border-l-danger-500;
   }
-  .custom-tippy .tippy-box[data-theme~=danger][data-placement^=right] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="danger"][data-placement^="right"]
+    > .tippy-arrow::before {
     @apply border-r-danger-500;
   }
-  .custom-tippy .tippy-box[data-theme~=dark][data-placement^=top] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="dark"][data-placement^="top"]
+    > .tippy-arrow::before {
     @apply border-t-black-500 dark:border-t-slate-900;
   }
-  .custom-tippy .tippy-box[data-theme~=dark][data-placement^=bottom] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="dark"][data-placement^="bottom"]
+    > .tippy-arrow::before {
     @apply border-b-black-500 dark:border-b-slate-900;
   }
-  .custom-tippy .tippy-box[data-theme~=dark][data-placement^=left] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="dark"][data-placement^="left"]
+    > .tippy-arrow::before {
     @apply border-l-black-500 dark:border-l-slate-900;
   }
-  .custom-tippy .tippy-box[data-theme~=dark][data-placement^=right] > .tippy-arrow::before {
+  .custom-tippy
+    .tippy-box[data-theme~="dark"][data-placement^="right"]
+    > .tippy-arrow::before {
     @apply border-r-black-500 dark:border-r-slate-900;
   }
   .main-caro .swiper-button-next:after,
@@ -444,7 +519,7 @@
   .btn-outline-dark.active {
     @apply bg-slate-900 text-white dark:bg-slate-900 dark:text-slate-300;
   }
-  [aria-expanded=true] > .btn-outline-dark {
+  [aria-expanded="true"] > .btn-outline-dark {
     @apply bg-slate-900 text-white;
   }
   .btn-outline-primary {
@@ -453,7 +528,7 @@
   .btn-outline-primary.active {
     @apply bg-primary-500 text-white;
   }
-  [aria-expanded=true] > .btn-outline-primary {
+  [aria-expanded="true"] > .btn-outline-primary {
     @apply bg-primary-500 text-white;
   }
   .btn-outline-secondary {
@@ -462,7 +537,7 @@
   .btn-outline-secondary.active {
     @apply bg-secondary-500 text-white;
   }
-  [aria-expanded=true] > .btn-outline-secondary {
+  [aria-expanded="true"] > .btn-outline-secondary {
     @apply bg-secondary-500 text-white;
   }
   .btn-outline-success {
@@ -471,7 +546,7 @@
   .btn-outline-success.active {
     @apply bg-success-500 text-white;
   }
-  [aria-expanded=true] > .btn-outline-success {
+  [aria-expanded="true"] > .btn-outline-success {
     @apply bg-success-500 text-white;
   }
   .btn-outline-info {
@@ -480,7 +555,7 @@
   .btn-outline-info.active {
     @apply bg-[#0CE7FA] text-white;
   }
-  [aria-expanded=true] > .btn-outline-info {
+  [aria-expanded="true"] > .btn-outline-info {
     @apply bg-info-500 text-white;
   }
   .btn-outline-warning {
@@ -489,7 +564,7 @@
   .btn-outline-warning.active {
     @apply bg-[#FA916B] text-white;
   }
-  [aria-expanded=true] > .btn-outline-warning {
+  [aria-expanded="true"] > .btn-outline-warning {
     @apply bg-warning-500 text-white;
   }
   .btn-outline-danger {
@@ -498,7 +573,7 @@
   .btn-outline-danger.active {
     @apply bg-danger-500 text-white;
   }
-  [aria-expanded=true] > .btn-outline-danger {
+  [aria-expanded="true"] > .btn-outline-danger {
     @apply bg-danger-500 text-white;
   }
   .btn-outline-light {
@@ -507,7 +582,7 @@
   .btn-outline-light.active {
     @apply bg-[#E0EAFF] text-slate-900;
   }
-  [aria-expanded=true] > .btn-outline-light {
+  [aria-expanded="true"] > .btn-outline-light {
     @apply bg-[#E0EAFF] text-slate-900;
   }
   .btn.light {
@@ -543,7 +618,7 @@
   .split-btngroup button:hover {
     box-shadow: none !important;
   }
-  .split-btngroup [class*=btn-outline-] {
+  .split-btngroup [class*="btn-outline-"] {
     @apply ltr:last:border-l-0 rtl:last:border-r-0  focus:bg-transparent focus:text-inherit;
   }
   .split-btngroup .btn-outline-primary {
@@ -731,7 +806,7 @@
   .flatpickr-day.selected.nextMonthDay,
   .flatpickr-day.startRange.nextMonthDay,
   .flatpickr-day.endRange.nextMonthDay {
-    @apply bg-slate-900 border-black-500;
+    @apply bg-white border-black-500;
   }
   .input-group-control {
     @apply bg-white dark:bg-slate-900 dark:placeholder:text-slate-400 transition duration-300 ease-in-out border border-slate-200 dark:border-slate-700 focus:ring-0  focus:outline-none  
@@ -821,11 +896,16 @@
   .dashcode-app .react-select__control.select__control--is-disabled {
     @apply cursor-not-allowed;
   }
-  .dashcode-app .select__control.select__control--is-disabled .select__indicator-separator,
-  .dashcode-app .react-select__control.select__control--is-disabled .select__indicator-separator {
+  .dashcode-app
+    .select__control.select__control--is-disabled
+    .select__indicator-separator,
+  .dashcode-app
+    .react-select__control.select__control--is-disabled
+    .select__indicator-separator {
     @apply bg-slate-50 text-slate-800 placeholder:text-opacity-60;
   }
-  .dashcode-app .select__control.select__control--is-focused, .dashcode-app .select__control.react-select__control--is-focused,
+  .dashcode-app .select__control.select__control--is-focused,
+  .dashcode-app .select__control.react-select__control--is-focused,
   .dashcode-app .react-select__control.select__control--is-focused,
   .dashcode-app .react-select__control.react-select__control--is-focused {
     box-shadow: none;
@@ -859,33 +939,100 @@
   .dashcode-app .react-select__menu .select__menu-list .select__option,
   .dashcode-app .react-select__menu .select__menu-list .react-select__option,
   .dashcode-app .react-select__menu .react-select__menu-list .select__option,
-  .dashcode-app .react-select__menu .react-select__menu-list .react-select__option {
+  .dashcode-app
+    .react-select__menu
+    .react-select__menu-list
+    .react-select__option {
     cursor: pointer;
   }
-  .dashcode-app .select__menu .select__menu-list .select__option.select__option--is-focused,
-  .dashcode-app .select__menu .select__menu-list .react-select__option.select__option--is-focused,
-  .dashcode-app .select__menu .react-select__menu-list .select__option.select__option--is-focused,
-  .dashcode-app .select__menu .react-select__menu-list .react-select__option.select__option--is-focused,
-  .dashcode-app .react-select__menu .select__menu-list .select__option.select__option--is-focused,
-  .dashcode-app .react-select__menu .select__menu-list .react-select__option.select__option--is-focused,
-  .dashcode-app .react-select__menu .react-select__menu-list .select__option.select__option--is-focused,
-  .dashcode-app .react-select__menu .react-select__menu-list .react-select__option.select__option--is-focused {
+  .dashcode-app
+    .select__menu
+    .select__menu-list
+    .select__option.select__option--is-focused,
+  .dashcode-app
+    .select__menu
+    .select__menu-list
+    .react-select__option.select__option--is-focused,
+  .dashcode-app
+    .select__menu
+    .react-select__menu-list
+    .select__option.select__option--is-focused,
+  .dashcode-app
+    .select__menu
+    .react-select__menu-list
+    .react-select__option.select__option--is-focused,
+  .dashcode-app
+    .react-select__menu
+    .select__menu-list
+    .select__option.select__option--is-focused,
+  .dashcode-app
+    .react-select__menu
+    .select__menu-list
+    .react-select__option.select__option--is-focused,
+  .dashcode-app
+    .react-select__menu
+    .react-select__menu-list
+    .select__option.select__option--is-focused,
+  .dashcode-app
+    .react-select__menu
+    .react-select__menu-list
+    .react-select__option.select__option--is-focused {
     @apply bg-secondary-500 text-slate-900 bg-opacity-30;
   }
-  .dashcode-app .select__menu .select__menu-list .select__option.select__option--is-selected,
-  .dashcode-app .select__menu .select__menu-list .react-select__option.select__option--is-selected,
-  .dashcode-app .select__menu .react-select__menu-list .select__option.select__option--is-selected,
-  .dashcode-app .select__menu .react-select__menu-list .react-select__option.select__option--is-selected,
-  .dashcode-app .react-select__menu .select__menu-list .select__option.select__option--is-selected,
-  .dashcode-app .react-select__menu .select__menu-list .react-select__option.select__option--is-selected,
-  .dashcode-app .react-select__menu .react-select__menu-list .select__option.select__option--is-selected,
-  .dashcode-app .react-select__menu .react-select__menu-list .react-select__option.select__option--is-selected {
+  .dashcode-app
+    .select__menu
+    .select__menu-list
+    .select__option.select__option--is-selected,
+  .dashcode-app
+    .select__menu
+    .select__menu-list
+    .react-select__option.select__option--is-selected,
+  .dashcode-app
+    .select__menu
+    .react-select__menu-list
+    .select__option.select__option--is-selected,
+  .dashcode-app
+    .select__menu
+    .react-select__menu-list
+    .react-select__option.select__option--is-selected,
+  .dashcode-app
+    .react-select__menu
+    .select__menu-list
+    .select__option.select__option--is-selected,
+  .dashcode-app
+    .react-select__menu
+    .select__menu-list
+    .react-select__option.select__option--is-selected,
+  .dashcode-app
+    .react-select__menu
+    .react-select__menu-list
+    .select__option.select__option--is-selected,
+  .dashcode-app
+    .react-select__menu
+    .react-select__menu-list
+    .react-select__option.select__option--is-selected {
     @apply bg-secondary-900 text-slate-200;
   }
-  .dashcode-app .select__menu .select__menu-list .select__group .select__group-heading,
-  .dashcode-app .select__menu .react-select__menu-list .select__group .select__group-heading,
-  .dashcode-app .react-select__menu .select__menu-list .select__group .select__group-heading,
-  .dashcode-app .react-select__menu .react-select__menu-list .select__group .select__group-heading {
+  .dashcode-app
+    .select__menu
+    .select__menu-list
+    .select__group
+    .select__group-heading,
+  .dashcode-app
+    .select__menu
+    .react-select__menu-list
+    .select__group
+    .select__group-heading,
+  .dashcode-app
+    .react-select__menu
+    .select__menu-list
+    .select__group
+    .select__group-heading,
+  .dashcode-app
+    .react-select__menu
+    .react-select__menu-list
+    .select__group
+    .select__group-heading {
     margin-bottom: 0.5rem;
     @apply text-slate-900 capitalize;
     font-weight: bolder;
@@ -920,7 +1067,10 @@
     width: 0.85rem;
   }
   .dashcode-app .select__multi-value .select__multi-value__remove svg:hover,
-  .dashcode-app .react-select__multi-value .select__multi-value__remove svg:hover {
+  .dashcode-app
+    .react-select__multi-value
+    .select__multi-value__remove
+    svg:hover {
     cursor: pointer;
   }
   .select-borderless .select__control {
@@ -960,27 +1110,75 @@
   .dark .select__menu {
     @apply bg-slate-800;
   }
-  .dark .select__menu .select__menu-list .select__option.select__option--is-focused,
-  .dark .select__menu .select__menu-list .react-select__option.select__option--is-focused,
-  .dark .select__menu .react-select__menu-list .select__option.select__option--is-focused,
-  .dark .select__menu .react-select__menu-list .react-select__option.select__option--is-focused,
-  .dark .react-select__menu .select__menu-list .select__option.select__option--is-focused,
-  .dark .react-select__menu .select__menu-list .react-select__option.select__option--is-focused,
-  .dark .react-select__menu .react-select__menu-list .select__option.select__option--is-focused,
-  .dark .react-select__menu .react-select__menu-list .react-select__option.select__option--is-focused {
+  .dark
+    .select__menu
+    .select__menu-list
+    .select__option.select__option--is-focused,
+  .dark
+    .select__menu
+    .select__menu-list
+    .react-select__option.select__option--is-focused,
+  .dark
+    .select__menu
+    .react-select__menu-list
+    .select__option.select__option--is-focused,
+  .dark
+    .select__menu
+    .react-select__menu-list
+    .react-select__option.select__option--is-focused,
+  .dark
+    .react-select__menu
+    .select__menu-list
+    .select__option.select__option--is-focused,
+  .dark
+    .react-select__menu
+    .select__menu-list
+    .react-select__option.select__option--is-focused,
+  .dark
+    .react-select__menu
+    .react-select__menu-list
+    .select__option.select__option--is-focused,
+  .dark
+    .react-select__menu
+    .react-select__menu-list
+    .react-select__option.select__option--is-focused {
     @apply bg-slate-500 text-slate-300 bg-opacity-50;
   }
-  .dark .select__menu .select__menu-list .select__option.select__option--is-selected,
-  .dark .select__menu .select__menu-list .react-select__option.select__option--is-selected,
-  .dark .select__menu .react-select__menu-list .select__option.select__option--is-selected,
-  .dark .select__menu .react-select__menu-list .react-select__option.select__option--is-selected,
-  .dark .react-select__menu .select__menu-list .select__option.select__option--is-selected,
-  .dark .react-select__menu .select__menu-list .react-select__option.select__option--is-selected,
-  .dark .react-select__menu .react-select__menu-list .select__option.select__option--is-selected,
-  .dark .react-select__menu .react-select__menu-list .react-select__option.select__option--is-selected {
+  .dark
+    .select__menu
+    .select__menu-list
+    .select__option.select__option--is-selected,
+  .dark
+    .select__menu
+    .select__menu-list
+    .react-select__option.select__option--is-selected,
+  .dark
+    .select__menu
+    .react-select__menu-list
+    .select__option.select__option--is-selected,
+  .dark
+    .select__menu
+    .react-select__menu-list
+    .react-select__option.select__option--is-selected,
+  .dark
+    .react-select__menu
+    .select__menu-list
+    .select__option.select__option--is-selected,
+  .dark
+    .react-select__menu
+    .select__menu-list
+    .react-select__option.select__option--is-selected,
+  .dark
+    .react-select__menu
+    .react-select__menu-list
+    .select__option.select__option--is-selected,
+  .dark
+    .react-select__menu
+    .react-select__menu-list
+    .react-select__option.select__option--is-selected {
     @apply bg-slate-900 text-slate-200;
   }
-  html[dir=rtl] .select__control .select__loading-indicator {
+  html[dir="rtl"] .select__control .select__loading-indicator {
     flex-direction: row-reverse;
   }
   .pagination {
@@ -1005,7 +1203,8 @@
   .pagination.bordered li {
     @apply text-slate-500;
   }
-  .pagination.bordered li:first-child button, .pagination.bordered li:last-child button {
+  .pagination.bordered li:first-child button,
+  .pagination.bordered li:last-child button {
     @apply hover:bg-slate-900 hover:text-white transition duration-150 text-slate-500 h-6 w-6 flex items-center justify-center rounded;
   }
   .pagination.bordered li a,
@@ -1053,11 +1252,24 @@
     position: absolute;
     z-index: -10;
     --tw-backdrop-blur: blur(12px);
-    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur)
+      var(--tw-backdrop-brightness) var(--tw-backdrop-contrast)
+      var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate)
+      var(--tw-backdrop-invert) var(--tw-backdrop-opacity)
+      var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+      var(--tw-backdrop-sepia);
     --tw-content: "";
     content: var(--tw-content);
-    background: linear-gradient(180deg, rgba(var(--v-theme-background), 70%) 44%, rgba(var(--v-theme-background), 43%) 73%, rgba(var(--v-theme-background), 0%));
+    background: linear-gradient(
+      180deg,
+      rgba(var(--v-theme-background), 70%) 44%,
+      rgba(var(--v-theme-background), 43%) 73%,
+      rgba(var(--v-theme-background), 0%)
+    );
     background-repeat: repeat;
     block-size: 5.5rem;
     inset-block-start: -1.5rem;
@@ -1115,10 +1327,20 @@
     will-change: width;
   }
   .nav-shadow {
-    background: linear-gradient(rgb(255, 255, 255) 5%, rgba(255, 255, 255, 0.75) 45%, rgba(255, 255, 255, 0.2) 80%, transparent);
+    background: linear-gradient(
+      rgb(255, 255, 255) 5%,
+      rgba(255, 255, 255, 0.75) 45%,
+      rgba(255, 255, 255, 0.2) 80%,
+      transparent
+    );
   }
   .dark .nav-shadow {
-    background: linear-gradient(#1e293b 5%, rgba(30, 41, 59, 0.75) 45%, rgba(30, 41, 59, 0.2) 80%, transparent);
+    background: linear-gradient(
+      #1e293b 5%,
+      rgba(30, 41, 59, 0.75) 45%,
+      rgba(30, 41, 59, 0.2) 80%,
+      transparent
+    );
   }
   .sidebar-wrapper.sidebar-hovered {
     width: 248px !important;
@@ -1231,37 +1453,57 @@
   .social-link {
     @apply h-8 w-8 flex flex-col items-center justify-center border-black-500 dark:border-slate-700 border rounded-full text-slate-900 dark:text-slate-300 leading-[1] hover:bg-slate-900 dark:hover:bg-slate-700 hover:text-white transition duration-150;
   }
-  .legend-ring .apexcharts-legend-series:nth-child(1) .apexcharts-legend-marker {
+  .legend-ring
+    .apexcharts-legend-series:nth-child(1)
+    .apexcharts-legend-marker {
     @apply ring-4  ring-primary-500 ring-opacity-30 rtl:ml-4;
   }
-  .legend-ring .apexcharts-legend-series:nth-child(2) .apexcharts-legend-marker {
+  .legend-ring
+    .apexcharts-legend-series:nth-child(2)
+    .apexcharts-legend-marker {
     @apply ring-4  ring-info-500 ring-opacity-30 rtl:ml-4;
   }
-  .legend-ring .apexcharts-legend-series:nth-child(3) .apexcharts-legend-marker {
+  .legend-ring
+    .apexcharts-legend-series:nth-child(3)
+    .apexcharts-legend-marker {
     @apply ring-4  ring-warning-500 ring-opacity-30 rtl:ml-4;
   }
-  .legend-ring2 .apexcharts-legend-series:nth-child(1) .apexcharts-legend-marker {
+  .legend-ring2
+    .apexcharts-legend-series:nth-child(1)
+    .apexcharts-legend-marker {
     @apply ring-4  ring-info-500 ring-opacity-30 rtl:ml-4;
   }
-  .legend-ring2 .apexcharts-legend-series:nth-child(2) .apexcharts-legend-marker {
+  .legend-ring2
+    .apexcharts-legend-series:nth-child(2)
+    .apexcharts-legend-marker {
     @apply ring-4  ring-warning-500 ring-opacity-30 rtl:ml-4;
   }
-  .legend-ring3 .apexcharts-legend-series:nth-child(1) .apexcharts-legend-marker {
+  .legend-ring3
+    .apexcharts-legend-series:nth-child(1)
+    .apexcharts-legend-marker {
     @apply ring-4  ring-success-500 ring-opacity-30 rtl:ml-4;
   }
-  .legend-ring3 .apexcharts-legend-series:nth-child(2) .apexcharts-legend-marker {
+  .legend-ring3
+    .apexcharts-legend-series:nth-child(2)
+    .apexcharts-legend-marker {
     @apply ring-4  ring-warning-500 ring-opacity-30 rtl:ml-4;
   }
-  .legend-ring3 .apexcharts-legend-series:nth-child(3) .apexcharts-legend-marker {
+  .legend-ring3
+    .apexcharts-legend-series:nth-child(3)
+    .apexcharts-legend-marker {
     @apply ring-4  ring-secondary-500 ring-opacity-30 rtl:ml-4;
   }
-  .legend-ring4 .apexcharts-legend-series:nth-child(1) .apexcharts-legend-marker {
+  .legend-ring4
+    .apexcharts-legend-series:nth-child(1)
+    .apexcharts-legend-marker {
     @apply ring-4  ring-primary-500 ring-opacity-30 rtl:ml-4;
   }
-  .legend-ring4 .apexcharts-legend-series:nth-child(2) .apexcharts-legend-marker {
+  .legend-ring4
+    .apexcharts-legend-series:nth-child(2)
+    .apexcharts-legend-marker {
     @apply ring-4  ring-warning-500 ring-opacity-30 rtl:ml-4;
   }
-  [dir=rtl] .charts .apexcharts-legend-marker {
+  [dir="rtl"] .charts .apexcharts-legend-marker {
     margin-left: 10px !important;
   }
   .app_height {
@@ -1403,7 +1645,8 @@
   .date-range-custom2 .container-class > button {
     @apply hidden;
   }
-  .dark .date-range-custom .container-class::before, .dark .date-range-custom .container-class::after,
+  .dark .date-range-custom .container-class::before,
+  .dark .date-range-custom .container-class::after,
   .dark .date-range-custom2 .container-class::before,
   .dark .date-range-custom2 .container-class::after {
     @apply text-slate-300;
@@ -1476,10 +1719,14 @@
   .dashcode-app .react-calendar__month-view__weekdays__weekday abbr {
     @apply no-underline;
   }
-  .dashcode-app .react-calendar__month-view__weekdays__weekday .react-calendar__tile {
+  .dashcode-app
+    .react-calendar__month-view__weekdays__weekday
+    .react-calendar__tile {
     @apply text-slate-600;
   }
-  .dashcode-app .react-calendar__month-view__weekdays__weekday .react-calendar__tile.react-calendar__month-view__days__day--weekend {
+  .dashcode-app
+    .react-calendar__month-view__weekdays__weekday
+    .react-calendar__tile.react-calendar__month-view__days__day--weekend {
     @apply text-danger-500;
   }
   .dashcode-app .react-calendar__tile {
@@ -1497,7 +1744,8 @@
   .dashcode-app.dark .react-calendar__tile {
     @apply text-slate-400;
   }
-  .dashcode-app.dark .react-calendar__tile.react-calendar__month-view__days__day--weekend {
+  .dashcode-app.dark
+    .react-calendar__tile.react-calendar__month-view__days__day--weekend {
     @apply text-danger-500;
   }
   .dashcode-app.dark .react-calendar__tile:enabled:hover,
@@ -1685,4 +1933,5 @@
     }
   }
 }
-@layer utilities {}/*# sourceMappingURL=app.css.map */
+@layer utilities {
+} /*# sourceMappingURL=app.css.map */

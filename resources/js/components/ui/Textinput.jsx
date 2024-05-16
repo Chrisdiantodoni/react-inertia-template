@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Icon from "@/components/ui/Icon";
 import Cleave from "cleave.js/react";
 import "cleave.js/dist/addons/cleave-phone.us";
+import { Controller } from "react-hook-form";
 const Textinput = ({
     type,
     label,
@@ -27,7 +28,7 @@ const Textinput = ({
     options,
     onFocus,
     defaultValue,
-
+    control,
     ...rest
 }) => {
     const [open, setOpen] = useState(false);
@@ -86,19 +87,26 @@ const Textinput = ({
                     />
                 )}
                 {name && isMask && (
-                    <Cleave
-                        {...register(name)}
-                        {...rest}
-                        placeholder={placeholder}
-                        options={options}
-                        className={`${
-                            error ? " has-error" : " "
-                        } form-control py-2 ${className}  `}
-                        onFocus={onFocus}
-                        id={id}
-                        readOnly={readonly}
-                        disabled={disabled}
-                        onChange={onChange}
+                    <Controller
+                        name={name}
+                        control={control}
+                        render={({ field: { onChange, value } }) => (
+                            <Cleave
+                                // {...register(name)}
+                                {...rest}
+                                value={value}
+                                placeholder={placeholder}
+                                options={options}
+                                className={`${
+                                    error ? " has-error" : " "
+                                } form-control py-2 ${className}  `}
+                                onFocus={onFocus}
+                                id={id}
+                                readOnly={readonly}
+                                disabled={disabled}
+                                onChange={onChange}
+                            />
+                        )}
                     />
                 )}
                 {!name && isMask && (

@@ -29,13 +29,23 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-        return array_merge(parent::share($request), [
+        $sharedData = parent::share($request);
+
+        $authData = [];
+        if ($user = $request->user()) {
+            // If there is a logged-in user, load relationships
+            $user->load('permissions', 'dealer_users.dealers', 'roles');
+            $authData['user'] = $user;
+        } else {
+            // If there is no logged-in user, set user data to null
+            $authData['user'] = null;
+        }
+
+        return array_merge($sharedData, [
             'flash' => [
                 'message' => fn () => $request->session()->get('message'),
             ],
-            'auth' => [
-                'user' => $request->user(),
-            ],
+            'auth' => $authData,
         ]);
     }
 }

@@ -126,7 +126,7 @@
 }
 .menu-item-active {
   .menu-link {
-    @apply bg-slate-800 dark:bg-slate-700;
+    @apply bg-slate-800 dark:bg-slate-700 hover:bg-slate-900;
     .icon-box,
     .menu-icon,
     .text-box {
