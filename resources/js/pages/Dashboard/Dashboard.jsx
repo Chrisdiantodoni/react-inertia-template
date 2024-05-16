@@ -5,10 +5,11 @@ import Layout from "@/layout/Layout";
 import { Head, usePage } from "@inertiajs/react";
 
 export default function Dashboard() {
+    const { auth } = usePage().props;
     return (
         <Card title={"Dashboard"}>
             <Head title="Dashboard" />
-            <div>hahaha</div>
+            <div className="text-base">Hallo {auth?.user?.name}</div>
         </Card>
     );
 }

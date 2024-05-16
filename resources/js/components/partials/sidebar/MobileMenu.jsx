@@ -6,7 +6,6 @@ import SimpleBar from "simplebar-react";
 import useSemiDark from "@/hooks/useSemiDark";
 import useSkin from "@/hooks/useSkin";
 import useDarkMode from "@/hooks/useDarkMode";
-import { Link } from "react-router-dom";
 import useMobileMenu from "@/hooks/useMobileMenu";
 import Icon from "@/components/ui/Icon";
 
@@ -14,67 +13,72 @@ import Icon from "@/components/ui/Icon";
 import MobileLogo from "@/assets/images/Logo-Alfa.png";
 import MobileLogoWhite from "@/assets/images/logo/logo-c-white.svg";
 import svgRabitImage from "@/assets/images/svg/rabit.svg";
+import { Link } from "@inertiajs/react";
 
 const MobileMenu = ({ className = "custom-class" }) => {
-  const scrollableNodeRef = useRef();
-  const [scroll, setScroll] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollableNodeRef.current.scrollTop > 0) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
-    };
-    scrollableNodeRef.current.addEventListener("scroll", handleScroll);
-  }, [scrollableNodeRef]);
+    const scrollableNodeRef = useRef();
+    const [scroll, setScroll] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (scrollableNodeRef.current.scrollTop > 0) {
+                setScroll(true);
+            } else {
+                setScroll(false);
+            }
+        };
+        scrollableNodeRef.current.addEventListener("scroll", handleScroll);
+    }, [scrollableNodeRef]);
 
-  const [isSemiDark] = useSemiDark();
-  // skin
-  const [skin] = useSkin();
-  const [isDark] = useDarkMode();
-  const [mobileMenu, setMobileMenu] = useMobileMenu();
-  return (
-    <div
-      className={`${className} fixed  top-0 bg-white dark:bg-slate-800 shadow-lg  h-full   w-[248px]`}
-    >
-      <div className="logo-segment flex justify-between items-center bg-white dark:bg-slate-800 z-[9] h-[85px]  px-4 ">
-        <Link to="/dashboard">
-          <div className="flex items-center justify-center space-x-4 ">
-            <div className="logo-icon">
-              {!isDark && !isSemiDark ? (
-                <img src={MobileLogo} alt="" className="w-20" />
-              ) : (
-                <img src={MobileLogoWhite} alt="" className="w-20" />
-              )}
-            </div>
-            <div>
-              <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-                Alfa Scorpii MD
-              </h1>
-            </div>
-          </div>
-        </Link>
-        <button
-          type="button"
-          onClick={() => setMobileMenu(!mobileMenu)}
-          className="cursor-pointer text-slate-900 dark:text-white text-2xl"
+    const [isSemiDark] = useSemiDark();
+    // skin
+    const [skin] = useSkin();
+    const [isDark] = useDarkMode();
+    const [mobileMenu, setMobileMenu] = useMobileMenu();
+    return (
+        <div
+            className={`${className} fixed  top-0 bg-white dark:bg-slate-800 shadow-lg  h-full   w-[248px]`}
         >
-          <Icon icon="heroicons:x-mark" />
-        </button>
-      </div>
+            <div className="logo-segment flex justify-between items-center bg-white dark:bg-slate-800 z-[9] h-[85px]  px-4 ">
+                <Link href="/dashboard">
+                    <div className="flex items-center justify-center space-x-4 ">
+                        <div className="logo-icon">
+                            {!isDark && !isSemiDark ? (
+                                <img src={MobileLogo} alt="" className="w-20" />
+                            ) : (
+                                <img
+                                    src={MobileLogoWhite}
+                                    alt=""
+                                    className="w-20"
+                                />
+                            )}
+                        </div>
+                        <div>
+                            <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+                                Alfa Scorpii MD
+                            </h1>
+                        </div>
+                    </div>
+                </Link>
+                <button
+                    type="button"
+                    onClick={() => setMobileMenu(!mobileMenu)}
+                    className="cursor-pointer text-slate-900 dark:text-white text-2xl"
+                >
+                    <Icon icon="heroicons:x-mark" />
+                </button>
+            </div>
 
-      <div
-        className={`h-[60px]  absolute top-[80px] nav-shadow z-[1] w-full transition-all duration-200 pointer-events-none ${
-          scroll ? " opacity-100" : " opacity-0"
-        }`}
-      ></div>
-      <SimpleBar
-        className="sidebar-menu px-4 h-[calc(100%-80px)]"
-        scrollableNodeProps={{ ref: scrollableNodeRef }}
-      >
-        <Navmenu menus={menuItems} />
-        {/* <div className="bg-slate-900 mb-24 lg:mb-10 mt-24 p-4 relative text-center rounded-2xl text-white">
+            <div
+                className={`h-[60px]  absolute top-[80px] nav-shadow z-[1] w-full transition-all duration-200 pointer-events-none ${
+                    scroll ? " opacity-100" : " opacity-0"
+                }`}
+            ></div>
+            <SimpleBar
+                className="sidebar-menu px-4 h-[calc(100%-80px)]"
+                scrollableNodeProps={{ ref: scrollableNodeRef }}
+            >
+                <Navmenu menus={menuItems} />
+                {/* <div className="bg-slate-900 mb-24 lg:mb-10 mt-24 p-4 relative text-center rounded-2xl text-white">
           <img
             src={svgRabitImage}
             alt=""
@@ -92,9 +96,9 @@ const MobileMenu = ({ className = "custom-class" }) => {
             </button>
           </div>
         </div> */}
-      </SimpleBar>
-    </div>
-  );
+            </SimpleBar>
+        </div>
+    );
 };
 
 export default MobileMenu;

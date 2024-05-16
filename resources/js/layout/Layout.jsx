@@ -18,12 +18,11 @@ import { useSelector } from "react-redux";
 import Loading from "@/components/Loading";
 import { motion, AnimatePresence } from "framer-motion";
 import Flasher from "@/components/ui/Flasher";
+import { usePage } from "@inertiajs/react";
 
 const Layout = ({ children }) => {
     const { width, breakpoints } = useWidth();
     const [collapsed] = useSidebar();
-    const navigate = useNavigate();
-
     // const { isAuth, user } = useSelector((state) => state.auth);
 
     // useEffect(() => {

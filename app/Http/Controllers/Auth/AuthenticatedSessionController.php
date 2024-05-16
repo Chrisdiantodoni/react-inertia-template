@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
@@ -33,13 +34,28 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         try {
-            $request->authenticate();
-            $request->session()->regenerate();
+            $credentials = $request->only('email', 'password');
+            $remember = $request->has('remember'); // Check if the 'remember' checkbox is checked
 
-            $notification = array(
-                'type' =>  'success',
-                'message' => 'Login Successful'
-            );
+            if (Auth::attempt($credentials, $remember)) {
+                $id = Auth::user()->id;
+                $profileData = User::findOrFail($id);
+                $username = $profileData->name;
+
+                if ($profileData->status == 0) {
+                    $notification = [
+                        'message' => 'User ' . $username . ' telah dinonaktifkan',
+                        'alert-type' => 'info'
+                    ];
+                    Auth::logout(); // Log out the user if their status is inactive
+                } else {
+                    $notification = array(
+                        'type' =>  'success',
+                        'message' => 'Login Successful'
+                    );
+                }
+            }
+
             // Set flash message
             return redirect()->intended(route('dashboard', absolute: false))->with('message', $notification);
         } catch (\Exception $e) {

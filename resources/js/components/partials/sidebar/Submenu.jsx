@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Collapse } from "react-collapse";
-import { NavLink } from "react-router-dom";
 import Icon from "@/components/ui/Icon";
 import Multilevel from "./Multi";
+import { Link, usePage } from "@inertiajs/react";
 
 const Submenu = ({
     activeSubmenu,
@@ -11,6 +11,28 @@ const Submenu = ({
     toggleMultiMenu,
     activeMultiMenu,
 }) => {
+    const pages = usePage();
+    const locationName = pages.url.replace("/", "");
+    const isActive = false;
+
+    const [childMenu, setChildMenu] = useState(null);
+    const isLocationMatch = (targetLocation) => {
+        return (
+            locationName === targetLocation ||
+            locationName.startsWith(`${targetLocation}/`)
+        );
+    };
+
+    useEffect(() => {
+        let childMenuIndex = null;
+        item?.child?.forEach((item, i) => {
+            if (isLocationMatch(item.childlink)) {
+                childMenuIndex = i;
+            }
+        });
+        setChildMenu(childMenuIndex);
+    }, [pages?.url]);
+
     return (
         <Collapse isOpened={activeSubmenu === i}>
             <ul className="sub-menu  space-y-4  ">
@@ -58,28 +80,26 @@ const Submenu = ({
                                 />
                             </div>
                         ) : (
-                            <NavLink to={subItem.childlink}>
-                                {({ isActive }) => (
+                            <Link href={subItem?.childlink}>
+                                <span
+                                    className={`${
+                                        childMenu === j
+                                            ? " text-black dark:text-white font-medium"
+                                            : "text-slate-600 dark:text-slate-300"
+                                    } text-sm flex space-x-3 items-center transition-all duration-150 rtl:space-x-reverse`}
+                                >
                                     <span
                                         className={`${
-                                            isActive
-                                                ? " text-black dark:text-white font-medium"
-                                                : "text-slate-600 dark:text-slate-300"
-                                        } text-sm flex space-x-3 items-center transition-all duration-150 rtl:space-x-reverse`}
-                                    >
-                                        <span
-                                            className={`${
-                                                isActive
-                                                    ? " bg-slate-900 dark:bg-slate-300 ring-4 ring-opacity-[15%] ring-black-500 dark:ring-slate-300 dark:ring-opacity-20"
-                                                    : ""
-                                            } h-2 w-2 rounded-full border border-slate-600 dark:border-white inline-block flex-none`}
-                                        ></span>
-                                        <span className="flex-1">
-                                            {subItem.childtitle}
-                                        </span>
+                                            childMenu === j
+                                                ? " bg-slate-900 dark:bg-slate-300 ring-4 ring-opacity-[15%] ring-black-500 dark:ring-slate-300 dark:ring-opacity-20"
+                                                : ""
+                                        } h-2 w-2 rounded-full border border-slate-600 dark:border-white inline-block flex-none`}
+                                    ></span>
+                                    <span className="flex-1">
+                                        {subItem.childtitle}
                                     </span>
-                                )}
-                            </NavLink>
+                                </span>
+                            </Link>
                         )}
                     </li>
                 ))}

@@ -19,9 +19,10 @@ createInertiaApp({
     resolve: (name) => {
         const pages = import.meta.glob("./pages/**/*.jsx", { eager: true });
         let page = pages[`./pages/${name}.jsx`];
-        page.default.layout = name.startsWith("dashboard/")
-            ? undefined
-            : (page) => <Layout children={page} />;
+        console.log(name);
+        page.default.layout = name.startsWith("Dashboard/")
+            ? (page) => <Layout children={page} />
+            : undefined;
         return page;
 
         // resolvePageComponent(

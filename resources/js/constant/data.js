@@ -12,7 +12,23 @@ export const menuItems = [
 
     {
         title: "Counter Service",
-        icon: "heroicons-outline:document",
+        icon: "heroicons:wrench-screwdriver",
+        link: "#",
+        isHide: false,
+        child: [
+            {
+                childtitle: "Add Deposit",
+                childlink: "add-deposit",
+            },
+            {
+                childtitle: "List Deposit",
+                childlink: "list-deposit",
+            },
+        ],
+    },
+    {
+        title: "Cashier",
+        icon: "mdi:cash-register",
         link: "#",
         isHide: true,
         child: [
@@ -24,75 +40,93 @@ export const menuItems = [
                 childtitle: "List Deposit",
                 childlink: "project-details",
             },
+            {
+                childtitle: "Add Cash Withdrawal",
+                childlink: "projects",
+            },
+            {
+                childtitle: "List Withdrawal",
+                childlink: "project-details",
+            },
         ],
     },
     {
-        title: "Ecommerce",
-        icon: "heroicons:shopping-bag",
+        title: "Finance Ops",
+        icon: "ep:operation",
         link: "#",
+        isHide: true,
         child: [
             {
-                childtitle: "User App",
-
-                multi_menu: [
-                    {
-                        multiTitle: "Products",
-                        multiLink: "products",
-                    },
-                    {
-                        multiTitle: "Products Details",
-                        multiLink: "products/1",
-                    },
-
-                    {
-                        multiTitle: "Cart",
-                        multiLink: "cart",
-                    },
-                    {
-                        multiTitle: "Wishlist",
-                        multiLink: "wishlist",
-                    },
-                ],
+                childtitle: "List Deposit",
+                childlink: "project-details",
             },
             {
-                childtitle: "Admin App",
-
-                multi_menu: [
-                    {
-                        multiTitle: "Orders",
-                        multiLink: "orders",
-                        badge: "soon",
-                    },
-
-                    {
-                        multiTitle: "Add Product",
-                        multiLink: "add-product",
-                        badge: "soon",
-                    },
-                    {
-                        multiTitle: "Edit Product",
-                        multiLink: "edit-product",
-                        badge: "soon",
-                    },
-                    {
-                        multiTitle: "Customers",
-                        multiLink: "customers",
-                        badge: "soon",
-                    },
-                    {
-                        multiTitle: "Sellers",
-                        multiLink: "sellers",
-                        badge: "soon",
-                    },
-                    {
-                        multiTitle: "Invoice",
-                        multiLink: "invoice-ecommerce",
-                        badge: "soon",
-                    },
-                ],
+                childtitle: "List Withdrawal",
+                childlink: "project-details",
+            },
+            {
+                childtitle: "Add Cash Mutation",
+                childlink: "projects",
+            },
+            {
+                childtitle: "List Cash Mutation",
+                childlink: "project-details",
+            },
+            {
+                childtitle: "Add Deposit Validation",
+                childlink: "projects",
+            },
+            {
+                childtitle: "List Deposit Validation",
+                childlink: "project-details",
             },
         ],
     },
+    {
+        title: "Finance Spv",
+        icon: "mdi:account-supervisor",
+        link: "#",
+        isHide: true,
+        child: [
+            {
+                childtitle: "List Deposit",
+                childlink: "project-details",
+            },
+            {
+                childtitle: "List Withdrawal",
+                childlink: "project-details",
+            },
+            {
+                childtitle: "List Cash Mutation",
+                childlink: "project-details",
+            },
+            {
+                childtitle: "List Deposit Validation",
+                childlink: "project-details",
+            },
+        ],
+    },
+    {
+        title: "IT",
+        icon: "ion:server",
+        link: "#",
+        isHide: true,
+        child: [
+            {
+                childtitle: "List Permission",
+                childlink: "project-details",
+            },
+            {
+                childtitle: "List User",
+                childlink: "project-details",
+            },
+            {
+                childtitle: "List Role",
+                childlink: "project-details",
+            },
+        ],
+    },
+
     //     {
     //         isHeadr: true,
     //         title: "Pages",
@@ -1242,7 +1276,6 @@ import ssl from "@/assets/images/e-commerce/cart-icon/ssl.png";
 import stripe from "@/assets/images/e-commerce/cart-icon/stripe.png";
 import truck from "@/assets/images/e-commerce/cart-icon/truck.png";
 import vougepay from "@/assets/images/e-commerce/cart-icon/vougepay.png";
-import { usePage } from "@inertiajs/react";
 
 export const payments = [
     {

@@ -8,6 +8,7 @@ const initialState = {
     },
     permissionUser: [],
     pageTitle: "",
+    users: {},
 };
 
 const createStore = create((set) => ({
@@ -17,6 +18,12 @@ const createStore = create((set) => ({
             ...state,
             pageTitle: name,
         })),
+    handle: (name) => {
+        set((state) => ({
+            ...state,
+            [name]: value,
+        }));
+    },
     handleModal: (name, value, items, type) =>
         set((state) => ({
             ...state,
